@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+        background-color: black;
+        position: relative;
+      color:white;
+        align-items: center;
+        height: 100vh;
+		align-items: center;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  background-color: #45a049;
+}
+        canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+</style>
+</head>
+<body>
+<h1>照片展示</h1>
+<div class="button-container">
+  <button id="playButton">播放音乐</button>
+  <audio id="audio" src="src/班得瑞 - Childhood Memory-读家书.mp3"></audio>
+</div>
+<div class="photo-grid">
+  <img src="src/网络社社娘.png" alt="Image 1">
+  <img src="src/网络社社娘.png" alt="Image 2">
+<img src="src/网络社社娘.png" alt="Image 2">
+<img src="src/网络社社娘.png" alt="Image 2">
+<img src="src/网络社社娘.png" alt="Image 2">
+</div>
+
+
+
+<script>
+var playButton = document.getElementById('playButton');
+var audio = document.getElementById('audio');
+
+playButton.addEventListener('click', function() {
+  if (audio.paused) {
+    audio.play();
+    playButton.innerHTML = "暂停音乐";
+  } else {
+    audio.pause();
+    playButton.innerHTML = "播放音乐";
+  }
+});
+</script>
+	<canvas id="canvas"></canvas>
+	<script src="bgdots.js"></script>
+</body>
+</html>

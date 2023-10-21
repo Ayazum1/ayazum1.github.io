@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <style>
+	  body{
+  background-color:black;
+  color:white;
+  text-align: center;
+  text-shadow: 1px 1px 15px black;
+        
+  }
+        .container {
+            text-align: center;
+        }
+        canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+        .big-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        
+        .slideshow-container img {
+            width: auto;
+            height: 100%;
+            display: none;
+			margin: 0 auto;
+        }
+        
+        .slideshow-container img.active {
+            display: block;
+        }
+        
+        .slideshow-container .prev,
+        .slideshow-container .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .slideshow-container .prev:hover,
+        .slideshow-container .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .slideshow-container .prev {
+            left: 10px;
+        }
+        
+        .slideshow-container .next {
+            right: 10px;
+        }
+        
+        .dot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            cursor: pointer;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .dot.active {
+            background-color: #f1f1f1;
+        }
+        
+        .text {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 50px;
+            text-align: justify;
+            text-justify: inter-word;
+            display: flex;
+            
+        }
+        
+        .text p {
+		    margin-left: 10px;
+            width: 80vw;
+        }
+        
+        .text .image {
+            
+            text-align: right;
+        }
+        
+        .text img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .blur-effect {
+            filter: blur(5px);
+        }
+        
+        .buttons {
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #d3d3d3;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="big-title">XDE网络社给各位校友的一封信</h1>
+        
+        <div class="slideshow-container">
+            <img class="slideshow-img active" src="src/获奖图片.jpg" alt="Image 1">
+            <img  class="slideshow-img" src="src/logo图片.jpg" alt="Image 2">
+            <img class="slideshow-img" src="src/网络社老logo.jpg" alt="Image 3">
+            
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+        <div class="dot-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <div class="text" style="text-shadow: 1px 1px 15px white;color:white;"><div>
+<p>尊敬的校友、老师们：</p>
+<p>
+    Hello world！首先，我代表XDE网络社向您表达我们最热烈的欢迎和最深的敬意。感谢您在百忙之中抽出宝贵的时间，参加上海市控江中学组织的70周年校庆活动。
+    </p><p>自XDE网络社于2002年成立以来，我们一直致力于为同学们提供最好的网络科技资源和平台。今天，我们不仅是一个核心社团，更是推动控江中学比赛获奖的中坚力量。
+    </p><p>在人工智能领域，我们一直坚持创新驱动，不断推动技术的发展和应用。我们的同学已经在多个领域取得了各类成果，包括自然语言处理、机器学习、计算机视觉等。如在上海交通大学组织的荣昶杯中，我们就获得了三等奖和优胜奖；在上海大学组织的华为杯中，我们获得一等奖。
+    </p><p>在信息学奥赛方面，我们始终秉持着公平公正的原则，为所有参赛者提供平等的竞争机会。我们的教练团队都是由经验丰富的教师和专家组成，他们通过丰富的教学经验和深入的领域知识，为参赛者提供最优质的指导和支持。如卢嘉洋同学就得到了一等奖。
+    </p><p>我们相信，人工智能和信息学奥赛不仅是我们XDE网络社的核心竞争力，更是推动社会进步的重要力量。在这70周年的重要时刻，我们非常期待与您分享我们的成果，也非常渴望得到您的建议和支持。希望在未来，我们能继续携手合作，共同推动人工智能和信息学奥赛，为社会的进步做出更大的贡献。
+    </p><p>再次感谢您参加我们的70周年校庆活动，期待与您在接下来的时间里，有更深入的交流和更愉快的相聚。让我们一起，为XDE网络社的美好未来，共同奋斗！
+
+</p><p>XDE网络社 社长、全体成员及指导老师
+</p><p>2023/10/22
+</p></div>            <div class="image" >
+                <img src="src/网络社社娘.png" alt="Image 4" style="object-fit:cover;height:auto;width:18vw;position: relative;">
+            </div>
+        </div>
+               <div class="buttons">
+            <a href="/jianjie"><button class="button">社团简介</button></a>
+            <a href="/lianxiwom"><button class="button">联系我们</button></a>
+            <a href="https://xde.polygen.fun"><button class="button">留言墙</button></a>
+        </div>
+    </div>
+    
+    <script>
+        var slideIndex = 1;
+        
+        showSlide(slideIndex);
+        
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+        
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("slideshow-img");
+            var dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                    dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+        
+        setInterval(function() {
+            changeSlide(1);
+        }, 2000);
+    </script>
+	
+		<canvas id="canvas"></canvas>
+	<script src="bgdots.js"></script>
+</body>
+</html>
